@@ -6,6 +6,7 @@ import Vuex from 'vuex';
 import Util from './libs/util';
 import App from './app.vue';
 import 'iview/dist/styles/iview.css';
+// import '../src/config/main_plus.css';
 
 import VueI18n from 'vue-i18n';
 import Locales from './locale';
@@ -18,7 +19,7 @@ Vue.use(VueI18n);
 Vue.use(iView);
 
 
-axios.defaults.baseURL = 'http://rapapi.org/mockjsdata/21170';
+//axios.defaults.baseURL = 'http://rapapi.org/mockjsdata/21170';
 Vue.prototype.$http = Util.ajax;
 
 // 自动设置语言

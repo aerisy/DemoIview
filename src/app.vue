@@ -1,3 +1,5 @@
+<style scoped lang="less">
+</style>
 <template>
     <div>
         <router-view></router-view>
@@ -6,9 +8,7 @@
 <script>
     export default {
         data() {
-            return {
-
-            };
+            return {};
         },
         mounted() {
 
@@ -16,8 +16,6 @@
         beforeDestroy() {
 
         },
-        methods: {
-
-        }
+        methods: {}
     };
 </script>

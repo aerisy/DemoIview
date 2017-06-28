@@ -1,17 +1,27 @@
 <style scoped>
     .layout-logo {
-        width: 130px;
+        width: 100px;
         height: 30px;
-        background: #5b6270;
         border-radius: 3px;
         float: left;
         position: relative;
-        top: 15px;
+        top: 5px;
         left: 10px;
     }
 
+    .layout-logo img {
+        border-radius: 25px; /**5px**/
+        left: 30px;
+        position: relative;
+    }
+
+    .layout-copy p {
+        text-align: center;
+        padding: 20px 0 30px;
+        color: #9ea7b4;
+    }
+
     .demo-badge {
-        width: 5px;
         top: -10px;
         display: inline-block;
     }
@@ -27,10 +37,12 @@
 </style>
 <template>
     <div>
-        <Row type="flex" justify="center" align="middle">
-            <Col span="24">
-            <Menu mode="horizontal" :theme="theme1" active-name="1">
-                <div class="layout-logo"></div>
+        <Menu mode="horizontal" :theme="theme1" active-name="1">
+            <Row type="flex" justify="center" align="middle">
+                <Col span="21">
+                <div class="layout-logo">
+                    <img src="../images/logo.jpg" height="50px">
+                </div>
                 <Menu-item name="1">
                     <router-link :to="{ name:'demo1'}">
                         <Icon type="ios-paper"></Icon>
@@ -59,9 +71,9 @@
                             <Menu-item name="3-3">demo5</Menu-item>
                         </router-link>
                     </Menu-group>
-                    <Menu-group title="留存">
-                        <Menu-item name="3-4">用户留存</Menu-item>
-                        <Menu-item name="3-5">流失用户</Menu-item>
+                    <Menu-group title="插件DEMO">
+                        <Menu-item name="3-4">Echarts-GL</Menu-item>
+                        <Menu-item name="3-5">Leaflet+Echarts</Menu-item>
                     </Menu-group>
                 </Submenu>
                 <Menu-item name="4">
@@ -85,31 +97,53 @@
                         <!--</Radio-group>-->
                     </Menu-group>
                 </Submenu>
-                <Menu-item name="6">
-                    未读消息
-                    <Badge count="3" class="demo-badge" overflow-count="99">
-                    </Badge>
-                </Menu-item>
-            </Menu>
-            <!--<br>
-            <p>切换主题</p>
-            <Radio-group v-model="theme1">
-                <Radio label="light"></Radio>
-                <Radio label="dark"></Radio>
-                <Radio label="primary"></Radio>
-            </Radio-group>-->
-            </Col>
-        </Row>
+                </Col>
+                <Col span="3">
+                <Submenu name="7">
+                    <template slot="title">
+                        <Icon type="android-person "></Icon>
+                        <template v-if="MissMsgCount > 0">
+                            <Badge dot>
+                                个人中心
+                            </Badge>
+                        </template>
+                        <template v-else>
+                            个人中心
+                        </template>
+                    </template>
+                    <!--<Radio-group v-model="theme1">-->
+                    <Menu-item name="6">
+                        未读消息
+                        <Badge :count="MissMsgCount" overflow-count="99">
+                        </Badge>
+                    </Menu-item>
+                    <Menu-item name="dark"><a @click="theme1='dark'">修改密码</a></Menu-item>
+                    <Menu-item name="primary" @click="theme1='primary'">
+                        <Icon type="power"></Icon>
+                        <a @click="theme1='primary'">注销</a>
+                    </Menu-item>
+                </Submenu>
+                </Col>
+            </Row>
+        </Menu>
+        <!--<br>
+        <p>切换主题</p>
+        <Radio-group v-model="theme1">
+            <Radio label="light"></Radio>
+            <Radio label="dark"></Radio>
+            <Radio label="primary"></Radio>
+        </Radio-group>-->
+
         <div class="content-blank">
         </div>
         <router-view></router-view>
         <Row type="flex" justify="center" align="middle">
             <Col span="8">
-            <div class="footer-info">
-                <Alert type="success" show-icon>
-                    测试、学习用Iview项目
-                    <span slot="desc">成功的提示描述文案成功的提示描述文案成功的提示描述文案成功的提示描述文案成功的提示描述文案</span>
-                </Alert>
+            <div class="layout-copy">
+                <p>
+                    2017~ &copy; 西安九索数据<br>
+                    西华门
+                </p>
             </div>
             </Col>
         </Row>
@@ -117,9 +151,20 @@
 </template>
 <script>
     export default {
+        created: function () {
+            let _this = this;
+            _this.$http.get('/getMissMsgCount').then(function (response) {
+                _this.MissMsgCount = response.data.count;
+
+            }).catch(function (error) {
+                console.log('ERROR axios get!');
+                console.log(error);
+            });
+        },
         data () {
             return {
-                theme1: 'dark'
+                theme1: 'dark',
+                MissMsgCount: 0
             }
         }
     }

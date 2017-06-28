@@ -43,16 +43,16 @@
                    :size="tableSize" :data="tableData3" :columns="tableColumns3"></Table>
             </Col>
         </Row>
+        <Back-top></Back-top>
     </div>
 </template>
 <script>
-    import common from '../../libs/common';
     export default {
         methods: {
             getUser(){
-                common.ajax({
+               /* common.ajax({
                     url: '/getAllUser'
-                });
+                });*/
             }
 //                axios.get("http://rapapi.org/mockjsdata/21170/show")
         },

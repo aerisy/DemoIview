@@ -27,17 +27,17 @@
         <Row type="flex" justify="center" align="middle">
             <Col span="4">
             <h1>
-                <img src="../images/logo.png">
+                <img src="../images/logo.jpg">
             </h1>
             <!--inline Form可以水平分布-->
             <Form ref="formInline" :model="formInline" :rules="ruleInline">
                 <Form-item prop="user">
-                    <Input type="text" v-model="formInline.user" placeholder="Username">
+                    <Input type="text" v-model="formInline.user" placeholder="请输入用户名">
                     <Icon type="ios-person-outline" slot="prepend"></Icon>
                     </Input>
                 </Form-item>
                 <Form-item prop="password">
-                    <Input type="password" v-model="formInline.password" placeholder="Password">
+                    <Input type="password" v-model="formInline.password" placeholder="请输入密码">
                     <Icon type="ios-locked-outline" slot="prepend"></Icon>
                     </Input>
                 </Form-item>
