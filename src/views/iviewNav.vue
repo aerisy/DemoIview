@@ -58,7 +58,7 @@
                 <Submenu name="3">
                     <template slot="title">
                         <Icon type="stats-bars"></Icon>
-                        统计分析
+                        插件示例
                     </template>
                     <Menu-group title="DEMOS">
                         <router-link :to="{ name:'demo3'}">
@@ -73,7 +73,9 @@
                     </Menu-group>
                     <Menu-group title="插件DEMO">
                         <Menu-item name="3-4">Echarts-GL</Menu-item>
+                        <router-link :to="{ name:'demo6'}">
                         <Menu-item name="3-5">Leaflet+Echarts</Menu-item>
+                        </router-link>
                     </Menu-group>
                 </Submenu>
                 <Menu-item name="4">

@@ -93,8 +93,6 @@
 
     </div>
 </template>
-<script src="http://echarts.baidu.com/resource/echarts-gl-latest/dist/echarts-gl.min.js">
-</script>
 <script>
     import echarts from 'echarts'
     import echarts_wordcloud from 'echarts-wordcloud'
@@ -149,10 +147,10 @@
 
             var option = {
                 title:{
-                    text:"词云图",
+                    text:"热门文章",
                     link:'https://github.com/ecomfe/echarts-wordcloud',
-                    subtext: 'data-visual.cn',
-                    sublink:'http://data-visual.cn',
+                    subtext: '查看详细信息',
+                    sublink:'/demo2',
                 },
                 tooltip: {},
                 series: [{
@@ -177,7 +175,7 @@
                         }
                     },
                     data: [{
-                        name: 'Sam S Club',
+                        name: 'Vue入门教程',
                         value: 10000,
                         textStyle: {
                             normal: {
@@ -251,13 +249,13 @@
             myChart.setOption(option);
 
             var myChart2 = echarts.init(document.getElementById('maine2'));
-            var hours2 = ['12a', '1a', '2a', '3a', '4a', '5a', '6a',
-                '7a', '8a', '9a', '10a', '11a',
-                '12p', '1p', '2p', '3p', '4p', '5p',
-                '6p', '7p', '8p', '9p', '10p', '11p'
+            var hours2 = ['1', '2', '3', '4', '5', '6', '7',
+                '8', '9', '10', '11', '12',
+                '13', '14', '15', '16', '17', '18',
+                '19', '20', '21', '22', '23', '24'
             ];
-            var days2 = ['Saturday', 'Friday', 'Thursday',
-                'Wednesday', 'Tuesday', 'Monday', 'Sunday'
+            var days2 = ['散文', '诗歌', '技术资料',
+                '游戏攻略', '时事要闻', '财经分析', '论坛'
             ];
 
             var data2 = [
