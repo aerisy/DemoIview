@@ -58,11 +58,12 @@
         },
         created: function () {
             let _this = this;
-            _this.$http.get('/getAllUser')
+            _this.$http.get('/user/list')
+//            _this.$http.get('/getAllUser')
                 .then(function(response){
                     // success
 //                    console.log(response.data);
-                    _this.tableData3 = response.data.tableData3;
+                    _this.tableData3 = response.data.list;
                 }).catch(function(error){
                     //error
                     console.log('ERROR axios get!');

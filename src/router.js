@@ -5,6 +5,8 @@ import demo3 from "./views/demo/demo3.vue"
 import demo4 from "./views/demo/demo4.vue"
 import demo5 from "./views/demo/demo5.vue"
 import demo6 from "./views/demo/demo6.vue"
+// import demo7 from "./views/demo/demo7.vue"
+import demo8 from "./views/demo/demo8.vue"
 
 const routers = [
     {
@@ -46,6 +48,10 @@ const routers = [
                 path: 'demo6',
                 name: 'demo6',
                 component: demo6
+            }, {
+                path: 'demo8',
+                name: 'demo8',
+                component: demo8
             }
         ]
     }

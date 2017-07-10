@@ -70,12 +70,18 @@
                         <router-link :to="{ name:'demo5'}">
                             <Menu-item name="3-3">demo5</Menu-item>
                         </router-link>
+                        <router-link :to="{ name:'demo8'}">
+                            <Menu-item name="3-4">demo8</Menu-item>
+                        </router-link>
                     </Menu-group>
                     <Menu-group title="插件DEMO">
                         <Menu-item name="3-4">Echarts-GL</Menu-item>
                         <router-link :to="{ name:'demo6'}">
                         <Menu-item name="3-5">Leaflet+Echarts</Menu-item>
                         </router-link>
+                        <!--<router-link :to="{ name:'demo7'}">
+                            <Menu-item name="3-6">DataTables</Menu-item>
+                        </router-link>-->
                     </Menu-group>
                 </Submenu>
                 <Menu-item name="4">

@@ -30,9 +30,9 @@
                 /*this.$utils.ajax({
                  url:'/show'
                  });*/
-                _this.$http.get("/show").then(function (response) {
-                    console.log(response.data);
-                    _this.$Message.success(response.data.name);
+                _this.$http.get("/user/list").then(function (response) {
+                    console.log(response.data.data_info);
+                    _this.$Message.success(response.data.data_info);
                 }).catch(function (error) {
                     console.log('ERROR axios get!');
                     console.log(error);

@@ -9,7 +9,8 @@ util.title = function(title) {
     window.document.title = title;
 };
 
-const ajaxUrl = 'http://rapapi.org/mockjsdata/21170';
+const ajaxUrl = 'http://localhost:8888';
+// const ajaxUrl = 'http://rapapi.org/mockjsdata/21170';
 
 /*const ajaxUrl = env === 'development' ?
     'http://127.0.0.1:8888' :
